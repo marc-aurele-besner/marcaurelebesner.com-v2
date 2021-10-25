@@ -5,6 +5,7 @@ import { Stars } from "@react-three/drei"
 import { useSpring } from '@react-spring/core'
 import { a } from "@react-spring/three"
 import { Physics } from '@react-three/cannon'
+import { ResizeObserver } from '@jungle/resize-observer'
 
 import Overlay from './Components/Overlay'
 import Intro from './Components/Intro'
@@ -61,7 +62,8 @@ const Scene: React.FC<SceneProps> = ({ x, set, toggle }) => {
         camera={{ 
           position: startCameraPosition, 
           fov: startCameraFov 
-        }}>
+        }}
+        resize={{ polyfill: ResizeObserver }}>
         <color attach="background" args={toggle > 0 ? ['#000'] : ['#FFF']} />
         <fog attach="fog" args={[toggle > 0 ? '#000' : '#FFF', 15, 20]} />
         {/* Change background for stars when play is on */}
