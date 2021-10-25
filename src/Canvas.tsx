@@ -5,7 +5,7 @@ import { Stars } from "@react-three/drei"
 import { useSpring } from '@react-spring/core'
 import { a } from "@react-spring/three"
 import { Physics } from '@react-three/cannon'
-import { ResizeObserver } from '@jungle/resize-observer'
+import { ResizeObserver } from '@juggle/resize-observer'
 
 import Overlay from './Components/Overlay'
 import Intro from './Components/Intro'
