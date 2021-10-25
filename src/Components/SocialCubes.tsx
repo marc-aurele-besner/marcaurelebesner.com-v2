@@ -12,9 +12,11 @@ interface CubesProps {
     scale: THREE.Vector3
     switchColor: number
     play: number
+    contact: boolean
+    setContact: (contact: boolean) => void
 }
   
-const Cubes: React.FC<CubesProps> = ({ type, link, position, rotation, scale, switchColor, play, ...props}) => {
+const Cubes: React.FC<CubesProps> = ({ type, link, position, rotation, scale, switchColor, play, contact, setContact, ...props}) => {
     const ref = useRef()
     const [hovered, setHovered] = useState(false)
     const [clicked, setClicked] = useState(false)
@@ -22,7 +24,12 @@ const Cubes: React.FC<CubesProps> = ({ type, link, position, rotation, scale, sw
     const color = switchColor > 0 ? "#E59F35" : "#69c1af"
     let handleOnClick = () => { 
         setClicked(!clicked)
-        window.open(link, '_blank')
+        if (type === "gmail") {
+            setContact(!contact)
+        }
+        else {
+            window.open(link, '_blank')
+        }
     }
     if(play) {
         handleOnClick = () => null
@@ -46,9 +53,11 @@ const Cubes: React.FC<CubesProps> = ({ type, link, position, rotation, scale, sw
 interface SocialCubesProps {
     switchColor: number
     play: number
+    contact: boolean
+    setContact: (contact: boolean) => void
 }
   
-const SocialCubes: React.FC<SocialCubesProps> = ({ switchColor, play }) => {
+const SocialCubes: React.FC<SocialCubesProps> = ({ switchColor, play, contact, setContact }) => {
    const social = useStore(state => state.social)
    // eslint-disable-next-line @typescript-eslint/no-explicit-any
    let returnCubes: any = null
@@ -64,6 +73,8 @@ const SocialCubes: React.FC<SocialCubesProps> = ({ switchColor, play }) => {
                     scale={new THREE.Vector3(0.25, 0.25, 0.25)}
                     switchColor={switchColor}
                     play={play}
+                    contact={contact}
+                    setContact={setContact}
                 />
             )
         })

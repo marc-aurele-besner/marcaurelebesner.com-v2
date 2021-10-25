@@ -1888,6 +1888,11 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/globalthis@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@types/globalthis/-/globalthis-1.0.1.tgz#5310a812c2ef3905b821a1b219ae0e0d12d0e5f1"
+  integrity sha512-gPIOjEAp9ZysUzOYlwuaedjwxRW9QvMhlN5PSWCXYEw894QB/84YgXSsei8yE6D/FstC1QIrHgO7UfQ2A37M0Q==
+
 "@types/graceful-fs@^4.1.2":
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/@types/graceful-fs/-/graceful-fs-4.1.5.tgz#21ffba0d98da4350db64891f92a9e5db3cdb4e15"
@@ -4442,6 +4447,11 @@ elliptic@^6.5.3:
     inherits "^2.0.4"
     minimalistic-assert "^1.0.1"
     minimalistic-crypto-utils "^1.0.1"
+
+emailjs-com@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/emailjs-com/-/emailjs-com-3.2.0.tgz#a53cb22f1bc433c701c84c53d8b56eefd5ce7111"
+  integrity sha512-Prbz3E1usiAwGjMNYRv6EsJ5c373cX7/AGnZQwOfrpNJrygQJ15+E9OOq4pU8yC977Z5xMetRfc3WmDX6RcjAA==
 
 emittery@^0.7.1:
   version "0.7.2"

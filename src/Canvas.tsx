@@ -22,6 +22,7 @@ import PhoneEsportsCentral from './Components/PhoneEsportsCentral'
 import SocialCubes from './Components/SocialCubes'
 import SwitchColor from './Components/SwitchColor'
 import SwitchPlay from './Components/SwitchPlay'
+import MacContactForm from './Components/MacContactForm'
 
 interface SceneProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -36,6 +37,7 @@ const Scene: React.FC<SceneProps> = ({ x, set, toggle }) => {
   const [clicked, setClicked] = useState(false)
   const [play, setPlay] = useState(0)
   const [ready, setReady] = useState(false)
+  const [contact, setContact] = useState(false)
   const store = { clicked, setClicked, ready, setReady }
   const [{ xPlay }] = useSpring({ 
     xPlay: play, 
@@ -117,6 +119,12 @@ const Scene: React.FC<SceneProps> = ({ x, set, toggle }) => {
                       scale={new THREE.Vector3(0.15, 0.15, 0.15)} 
                       play={play}
                     />
+                    <PhoneGolfAlpine
+                      rotation={new THREE.Euler(0, Math.PI, 0)} 
+                      position={new THREE.Vector3(5.75, 0.45, 0.5)} 
+                      scale={new THREE.Vector3(0.35, 0.35, 0.35)} 
+                      play={play}
+                    />
                     <MacPlantswap 
                       rotation={new THREE.Euler(0, -0.35, 0)} 
                       position={new THREE.Vector3(7, 0.01, 0.6)} 
@@ -124,23 +132,17 @@ const Scene: React.FC<SceneProps> = ({ x, set, toggle }) => {
                       switchColor={toggle}
                       play={play}
                     />
-                    <MacEsportsCentral
-                      rotation={new THREE.Euler(0, -0.9, 0)} 
-                      position={new THREE.Vector3(9, 0.01, 2)} 
-                      scale={new THREE.Vector3(0.15, 0.15, 0.15)} 
-                      switchColor={toggle}
-                      play={play}
-                    />
-                    <PhoneGolfAlpine
-                      rotation={new THREE.Euler(0, Math.PI, 0)} 
-                      position={new THREE.Vector3(5.75, 0.45, 0.5)} 
-                      scale={new THREE.Vector3(0.35, 0.35, 0.35)} 
-                      play={play}
-                    />
                     <PhonePlantswap
                       rotation={new THREE.Euler(0, Math.PI - 0.5, 0)} 
                       position={new THREE.Vector3(7.8, 0.45, 1.25)} 
                       scale={new THREE.Vector3(0.35, 0.35, 0.35)} 
+                      switchColor={toggle}
+                      play={play}
+                    />
+                    <MacEsportsCentral
+                      rotation={new THREE.Euler(0, -0.9, 0)} 
+                      position={new THREE.Vector3(9, 0.01, 2)} 
+                      scale={new THREE.Vector3(0.15, 0.15, 0.15)} 
                       switchColor={toggle}
                       play={play}
                     />
@@ -156,15 +158,29 @@ const Scene: React.FC<SceneProps> = ({ x, set, toggle }) => {
                       position={new THREE.Vector3(-2.2, 0, 0.6)} 
                       scale={new THREE.Vector3(0.35, 0.35, 0.35)} 
                       clicked={clicked} />
-                    <SocialCubes switchColor={toggle} play={play} />
+                    <SocialCubes 
+                      switchColor={toggle} 
+                      play={play} 
+                      contact={contact}
+                      setContact={setContact}
+                    />
                     <GroundReflection x={x} />
-                  {/*  <Ground position={[0, -1, 0]} rotation={[-Math.PI / 2, 0, 0]} /> */}
+                    <MacContactForm
+                      rotation={new THREE.Euler(0, 0, 0)} 
+                      position={new THREE.Vector3(0, 3.75, 2)} 
+                      scale={new THREE.Vector3(0.25, 0.25, 0.25)} 
+                      clicked={clicked}
+                      switchColor={toggle}
+                      contact={contact}
+                      setContact={setContact}
+                    />
                 </group>
             </Physics>
             <Intro 
               start={ready && clicked} 
               play={play} 
               set={setReady} 
+              contact={contact}
             />
         </Suspense>
         <mesh receiveShadow renderOrder={1000} position={[0, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
