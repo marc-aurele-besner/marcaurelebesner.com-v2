@@ -8,7 +8,7 @@ interface VideoTextMarcAureleProps {
 }
 
 const VideoTextMarcAurele: React.FC<VideoTextMarcAureleProps> = ({ clicked, ...props }) => {
-    const [video] = useState(() => Object.assign(document.createElement('video'), { src: '/videos/everythingIsPossible.mp4', crossOrigin: 'Anonymous', loop: true }))
+    const [video] = useState(() => Object.assign(document.createElement('video'), { src: '/videos/everythingIsPossible.mp4', crossOrigin: 'Anonymous', loop: true, playsinline: true, muted: true, autoPlay: true }))
     useEffect(() => void (clicked && video.play()), [video, clicked])
     return (
       <Text font="/fonts/Inter-Bold.woff" fontSize={1.25} letterSpacing={-0.06} {...props}>

@@ -20,7 +20,7 @@ interface VideoTvProps {
 }
 
 const VideoTv: React.FC<VideoTvProps> = ({ clicked, ...props }) => {
-  const [video] = useState(() => Object.assign(document.createElement('video'), { src: '/videos/everythingIsPossible.mp4', crossOrigin: 'Anonymous', loop: true }))
+  const [video] = useState(() => Object.assign(document.createElement('video'), { src: '/videos/everythingIsPossible.mp4', crossOrigin: 'Anonymous', loop: true, playsinline: true, muted: true, autoPlay: true }))
  
   useEffect(() => void (clicked && video.play()), [video, clicked])
   return (
