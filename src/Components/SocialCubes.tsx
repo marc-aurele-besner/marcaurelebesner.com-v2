@@ -56,6 +56,7 @@ const SocialCubes: React.FC<SocialCubesProps> = ({ switchColor, play }) => {
         returnCubes = social.map((item) => {
             return (
                 <Cubes 
+                    key={item.type}
                     type={item.type} 
                     link={item.link} 
                     position={new THREE.Vector3(item.position.x, item.position.y, item.position.z)}

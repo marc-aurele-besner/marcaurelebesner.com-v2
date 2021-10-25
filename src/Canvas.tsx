@@ -83,7 +83,7 @@ const Scene: React.FC<SceneProps> = ({ x, set, toggle }) => {
           castShadow
         />
         
-        <Suspense fallback={null}>
+        <Suspense fallback={<p>Please wait while the website is loading.</p>}>
             <Physics>
                 <SwitchColor 
                   x={x} 
