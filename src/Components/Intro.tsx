@@ -31,7 +31,7 @@ const Intro: React.FC<IntroProps> = ({ start, play, set, contact }) => {
       }
     }
     if (contact) {
-      state.camera.position.lerp(vec.set(1, 6, 16), 0.05)
+      state.camera.position.lerp(vec.set(state.mouse.x * 0.1, 6 + state.mouse.y * 0.1, 16), 0.05)
       state.camera.lookAt(0, 0, -10)
     }
     state.camera.rotateY(-rotation / 100)

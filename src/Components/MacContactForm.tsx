@@ -4,6 +4,8 @@ import { Html, useGLTF } from '@react-three/drei'
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader'
 import emailjs from 'emailjs-com'
 
+import ArrowDown from './ArrowDown'
+
 type GLTFResult = GLTF & {
   nodes: {
     Cube008: THREE.Mesh
@@ -180,9 +182,22 @@ const MacContactForm: React.FC<MacProps> = ({ clicked, switchColor, contact, set
         <mesh geometry={nodes.keyboard.geometry} material={materials.keys} position={[1.79, 0, 3.45]} />
         <group position={[0, -0.1, 3.39]}>
           <mesh geometry={nodes.Cube002.geometry} material={nodes.Cube002.material} />
-          <mesh geometry={nodes.Cube002_1.geometry} material={materials.trackpad} />
+          <mesh 
+            geometry={nodes.Cube002_1.geometry} 
+            material={materials.trackpad}
+            onClick={() => setContact(!contact)} 
+          />
         </group>
         <mesh geometry={nodes.touchbar.geometry} material={materials.touchbar} position={[0, -0.03, 1.2]} />
+        <group 
+          position={[7, -3, 1.2]}
+          rotation={[0, Math.PI / 2, 0]}>
+          <ArrowDown 
+            contact={contact}
+            setContact={setContact}
+            {...props}
+          />
+        </group>
       </group>
     )
   }
