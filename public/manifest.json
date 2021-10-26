@@ -1,8 +1,10 @@
 {
     "short_name": "MarcAureleBesner.com",
-    "name": "Marc Aurele Besner",
-    "description": "",
+    "name": "Marc-Aurele Besner",
+    "description": "Everything is possible!",
     "url": "https://marcaurelebesner.com",
     "start_url": ".",
-    "display": "standalone"
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff"
 }

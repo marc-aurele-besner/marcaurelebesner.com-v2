@@ -22,7 +22,7 @@ const socialMedial: SocialMediaProps[] = [
     },
     {
         type: 'gmail',
-        link: 'mailto:marcaurele.desk@gmail.com',
+        link: 'contactForm',
         behavior: 'link',
         position: new THREE.Vector3(-0.5, 0.25, 1)
     },

@@ -1,8 +1,8 @@
 {
   "name": "marcaurelebesner.com",
-  "version": "1.0.1",
+  "version": "2.0.1",
   "description": "Marc-Aurele Besner Website",
-  "repository": "https://github.com/marc-aurele-besner/marcaurelebesner.com",
+  "repository": "https://github.com/marc-aurele-besner/marcaurelebesner.com-v2",
   "author": "marcaurelebesner",
   "license": "MIT",
   "main": "src/index.js",
@@ -41,6 +41,7 @@
     "@typescript-eslint/parser": "^4.31.0",
     "eslint": "^7.32.0",
     "netlify": "^8.0.0",
+    "prettier": "^2.4.1",
     "typescript": "^4.4.2"
   },
   "browserslist": {
