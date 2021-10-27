@@ -39,7 +39,7 @@ const Screenshot: React.FC<ScreenshotProps> = ({ switchColor, play, ...props }) 
   
   const handleOnClickEsportsCentral = () => { 
     if (play === 1) {
-      window.open('https://esportscentral.ca', '_blank')
+      window.open('https://stable.esportscentral.ca', '_blank')
     }
   }
   
