@@ -48,9 +48,8 @@ interface ScreenshotProps {
   play: number
 }
 
-const Screenshot: React.FC<ScreenshotProps> = ({ switchColor, play, ...props }) => {
-  const textureLight = useLoader(THREE.TextureLoader, `/images/screenshotPhoneEsportsCentralLight.png`)
-  const textureDark = useLoader(THREE.TextureLoader, `/images/screenshotPhoneEsportsCentralDark.png`)
+const Screenshot: React.FC<ScreenshotProps> = ({ play, ...props }) => {
+  const texture = useLoader(THREE.TextureLoader, `/images/screenshotPhoneCollageOfMyself.png`)
   const [hovered, setHover] = useState(false)
   useEffect(() => void (document.body.style.cursor = hovered ? "pointer" : "auto"), [hovered])
   const onPointerOver = useCallback(() => setHover(true), [])
@@ -58,7 +57,7 @@ const Screenshot: React.FC<ScreenshotProps> = ({ switchColor, play, ...props }) 
   
   const handleOnClickPlantswap = () => { 
     if (play === 1) {
-      window.open('https://stable.esportscentral.ca', '_blank')
+      window.open('https://gallery.collageofmyself.com/', '_blank')
     }
   }
   
@@ -71,7 +70,7 @@ const Screenshot: React.FC<ScreenshotProps> = ({ switchColor, play, ...props }) 
       onPointerOver={onPointerOver} 
       onPointerOut={onPointerOut}
       {...props}>
-        <meshBasicMaterial attach="material" map={switchColor > 0 ? textureDark : textureLight} />
+        <meshBasicMaterial attach="material" map={texture} />
     </Plane>
   )
 }
@@ -84,7 +83,7 @@ interface PhoneProps {
   play: number
 }
 
-const PhoneEsportsCentral: React.FC<PhoneProps> = ({ switchColor, play, ...props }) => {
+const PhoneCollageOfMyself: React.FC<PhoneProps> = ({ switchColor, play, ...props }) => {
   const group = useRef()
   const { nodes, materials } = useGLTF('/models/iPhone.glb') as GLTFResult
  
@@ -175,4 +174,4 @@ const PhoneEsportsCentral: React.FC<PhoneProps> = ({ switchColor, play, ...props
   )
 }
 
-export default PhoneEsportsCentral
+export default PhoneCollageOfMyself

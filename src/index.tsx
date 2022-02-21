@@ -1,10 +1,28 @@
+import * as THREE from 'three'
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
+import { useLoader } from '@react-three/fiber'
+import { useGLTF } from '@react-three/drei'
 import { useSpring } from '@react-spring/core'
 import { a } from '@react-spring/web'
 import "./styles.css"
 import Scene from './Canvas'
 import './styles.css'
+
+useGLTF.preload('/models/switch.glb')
+useGLTF.preload('/models/mac.glb')
+useGLTF.preload('/models/iPhone.glb')
+
+useLoader.preload(THREE.TextureLoader, `/images/screenshotGolfAlpine.png`)
+useLoader.preload(THREE.TextureLoader, `/images/screenshotPhoneGolfAlpine.png`)
+
+useLoader.preload(THREE.TextureLoader, `/images/screenshotPlantswapLight.png`)
+useLoader.preload(THREE.TextureLoader, `/images/screenshotPlantswapDark.png`)
+useLoader.preload(THREE.TextureLoader, `/images/screenshotPhonePlantswapLight.png`)
+useLoader.preload(THREE.TextureLoader, `/images/screenshotPhonePlantswapDark.png`)
+
+useLoader.preload(THREE.TextureLoader, `/images/screenshotCollageOfMyself.png`)
+useLoader.preload(THREE.TextureLoader, `/images/screenshotPhoneCollageOfMyself.png`)
 
 const App = () => {
     const [toggle, set] = useState(0)

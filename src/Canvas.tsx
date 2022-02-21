@@ -6,6 +6,7 @@ import { useSpring } from '@react-spring/core'
 import { a } from "@react-spring/three"
 import { Physics } from '@react-three/cannon'
 import { ResizeObserver } from '@juggle/resize-observer'
+import Loader from 'react-loader-spinner'
 
 import Overlay from './Components/Overlay'
 import Intro from './Components/Intro'
@@ -15,10 +16,10 @@ import VideoTextRealisations from './Components/VideoTextRealisations'
 import Tv from './Components/Tv'
 import MacGolfAlpine from './Components/MacGolfAlpine'
 import MacPlantswap from './Components/MacPlantswap'
-import MacEsportsCentral from './Components/MacEsportsCentral'
+import MacCollageOfMyself from './Components/MacCollageOfMyself'
 import PhoneGolfAlpine from './Components/PhoneGolfAlpine'
 import PhonePlantswap from './Components/PhonePlantswap'
-import PhoneEsportsCentral from './Components/PhoneEsportsCentral'
+import PhoneCollageOfMyself from './Components/PhoneCollageOfMyself'
 import SocialCubes from './Components/SocialCubes'
 import SwitchColor from './Components/SwitchColor'
 import SwitchPlay from './Components/SwitchPlay'
@@ -87,7 +88,7 @@ const Scene: React.FC<SceneProps> = ({ x, set, toggle }) => {
           castShadow
         />
         
-        <Suspense fallback={<p>Please wait while the website is loading.</p>}>
+        <Suspense fallback={<Loader type="Circles" color="#00BFFF" height={80} width={80}/>}>
             <Physics>
                 <SwitchColor 
                   x={x} 
@@ -139,14 +140,14 @@ const Scene: React.FC<SceneProps> = ({ x, set, toggle }) => {
                       switchColor={toggle}
                       play={play}
                     />
-                    <MacEsportsCentral
+                    <MacCollageOfMyself
                       rotation={new THREE.Euler(0, -0.9, 0)} 
                       position={new THREE.Vector3(9, 0.01, 2)} 
                       scale={new THREE.Vector3(0.15, 0.15, 0.15)} 
                       switchColor={toggle}
                       play={play}
                     />
-                    <PhoneEsportsCentral
+                    <PhoneCollageOfMyself
                       rotation={new THREE.Euler(0, Math.PI - 1, 0)} 
                       position={new THREE.Vector3(9.6, 0.45, 3)} 
                       scale={new THREE.Vector3(0.35, 0.35, 0.35)} 
