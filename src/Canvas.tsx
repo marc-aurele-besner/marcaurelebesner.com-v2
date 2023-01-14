@@ -6,7 +6,7 @@ import { useSpring } from '@react-spring/core'
 import { a } from "@react-spring/three"
 import { Physics } from '@react-three/cannon'
 import { ResizeObserver } from '@juggle/resize-observer'
-import Loader from 'react-loader-spinner'
+import { InfinitySpin } from 'react-loader-spinner'
 
 import Overlay from './Components/Overlay'
 import Intro from './Components/Intro'
@@ -88,7 +88,7 @@ const Scene: React.FC<SceneProps> = ({ x, set, toggle }) => {
           castShadow
         />
         
-        <Suspense fallback={<Loader type="Circles" color="#00BFFF" height={80} width={80}/>}>
+        <Suspense fallback={<InfinitySpin color="#00BFFF" width={80}/>}>
             <Physics>
                 <SwitchColor 
                   x={x} 
