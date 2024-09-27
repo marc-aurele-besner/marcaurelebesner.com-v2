@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "start",
+      "type": "shell",
+      "command": "react-scripts start",
+      "problemMatcher": []
+    },
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "react-scripts build",
+      "problemMatcher": []
+    },
+    {
+      "label": "test",
+      "type": "shell",
+      "command": "react-scripts test --env=jsdom",
+      "problemMatcher": []
+    },
+    {
+      "label": "eject",
+      "type": "shell",
+      "command": "react-scripts eject",
+      "problemMatcher": []
+    }
+  ]
+}
